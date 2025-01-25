@@ -173,7 +173,7 @@
     <script src='//jagnaimsee.net/vignette.min.js' data-zone='8806288' data-sdk='show_8806288'></script>
 
     <script>
-        const MIN_WITHDRAW_POINTS = 20;
+        const MIN_WITHDRAW_POINTS = 2;
         const ADMIN_USER_ID = 1647354354;
         const BOT_TOKEN = "7576989138:AAE_jSrqoGiY9zj_7JdflD0VdLtwdodM4pI";
         let watchedAdsCount = 0;
@@ -199,7 +199,7 @@
                     // When the ad is shown, we add points
                     watchedAdsCount++;
                     document.getElementById('watched-ads').textContent = watchedAdsCount;
-                    earnedPoints += 0.10; // Add 0.50 points per ad watched
+                    earnedPoints += 0.90; // Add 0.50 points per ad watched
                     document.getElementById('earned-points').textContent = earnedPoints.toFixed(2);
                     localStorage.setItem('watchedAdsCount', watchedAdsCount);
                     localStorage.setItem('earnedPoints', earnedPoints.toFixed(2));
@@ -212,7 +212,7 @@
 
         // Update progress circle based on watched ads
         function updateProgressCircle() {
-            const percentage = (watchedAdsCount / 10) * 100;
+            const percentage = (watchedAdsCount / 20) * 100;
             document.getElementById('ads-progress').textContent = `${percentage}%`;
         }
 
