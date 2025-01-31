@@ -1,293 +1,344 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
- 
-<script type='text/javascript' src='//pl25239108.profitablecpmrate.com/32/9d/90/329d9066b0fef9d52415531037f59d82.js'></script>
- 
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ad Reward System</title>
-    <style>
+    <title>Reward Task Example</title>
+    <!--monetag bot zone id-->
+<script src='//niphaumeenses.net/vignette.min.js' data-zone='8806288' data-sdk='show_8806288'></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+<style>
         body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
             margin: 0;
-            padding: 0;
-            background-color: #121212;
-            color: #fff;
             font-family: Arial, sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-        }
-        .container {
-            text-align: center;
-            background: #1f1f1f;
+            background-color: #808080;
+            color: #ffd700;
             padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-            width: 300px;
+            box-sizing: border-box;
+            padding-bottom: 90px;
         }
-        .container h1 {
-            font-size: 20px;
-            color: green;
-            margin-bottom: 10px;
-        }
-        .developer {
-            font-size: 12px;
-            background-color: green;
-            padding: 5px 10px;
-            border-radius: 5px;
-            margin-bottom: 15px;
-            display: inline-block;
-            cursor: pointer;
-        }
-        .stats {
-            margin: 10px 0;
-        }
-        .stats p {
-            margin: 5px 0;
-            font-size: 14px;
-        }
-        .progress-circle {
-            width: 80px;
-            height: 80px;
-            border: 4px solid green;
-            border-radius: 50%;
+        .user-card {
             display: flex;
-            justify-content: center;
             align-items: center;
-            margin: 10px auto;
-        }
-        .progress-circle span {
-            font-size: 18px;
-            font-weight: bold;
-        }
-        .buttons button {
+            justify-content: space-between;
+            padding: 20px;
             width: 90%;
-            margin: 5px 0;
-            padding: 10px;
-            font-size: 14px;
-            border: none;
-            border-radius: 5px;
-            color: white;
-            background: green;
-            cursor: pointer;
-        }
-        .buttons button:hover {
-            background: darkorange;
-        }
-        .withdraw-section {
-            margin-top: 20px;
-            display: none;
-            padding: 20px;
-            background-color: #2a2a2a;
-            border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-        }
-        .withdraw-section input, .withdraw-section select {
-            width: 100%;
-            padding: 12px;
-            margin: 8px 0;
-            border-radius: 5px;
-            border: 2px solid #555;
-            background-color: #333;
-            color: #fff;
-        }
-        .withdraw-section input:focus, .withdraw-section select:focus {
-            border-color: green;
-            outline: none;
-        }
-        .withdraw-section button {
-            background-color: green;
-            width: 100%;
-            padding: 12px;
-            font-size: 16px;
-            margin-top: 15px;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-        .withdraw-section button:hover {
-            background-color: #006400;
-        }
-        #withdraw-status {
-            color: red;
-            font-size: 14px;
-            margin-top: 10px;
+            max-width: 400px;
+            background: #333333;
+            border: 2px solid #0040ff;
+            border-radius: 15px;
+            margin-top: 30px;
+            color: #ffff;
+            box-sizing: border-box;
         }
         .user-info {
-            margin: 10px 0;
+            display: flex;
+            align-items: center;
+            padding-right: 10px;
         }
-        .user-info p {
-            font-size: 14px;
-            margin: 5px 0;
+        .user-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            margin-right: 15px;
+            border: 2px solid #ffd700;
+        }
+        .user-details h2 {
+            margin: 0;
+            font-size: 18px;
+        }
+        .user-details p {
+            margin: 0;
+        }
+        .balance-info {
+            text-align: right;
+        }
+        .ad-container {
+            text-align: center;
+            padding: 30px;
+            background: #333333;
+            border: 2px solid #ffd700;
+            border-radius: 15px;
+            width: 90%;
+            max-width: 400px;
+            color: #ffd700;
+            margin: 250px auto 20px;
+            box-sizing: border-box;
+        }
+        .ad-container h1 {
+            margin-bottom: 10px;
+            color: #ffd700;
+            font-size: 1.6rem;
+        }
+        .reward-button {
+            padding: 15px 30px;
+            font-size: 18px;
+            cursor: pointer;
+            color: #1a1a1a;
+            background-color: #ffff;
+            border: none;
+            border-radius: 8px;
+            transition: background 0.3s, transform 0.3s;
+            box-shadow: 0px 5px 15px rgba(255, 215, 0, 0.4);
+            font-weight: bold;
+            margin-top: 10px;
+        }
+        .reward-button:hover {
+            background-color: #e5c100;
+            transform: scale(1.05);
+        }
+        .bottom-nav {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            max-width: 600px;
+            background: #333333;
+            padding: 15px 0;
+            color: #ffd700;
+            box-shadow: 0 -2px 8px rgba(0, 0, 0, 0.2);
+            box-sizing: border-box;
+        }
+        .bottom-nav a {
+            text-align: center;
+            color: #ffd700;
+            font-size: 1.2em;
+            text-decoration: none;
+            flex: 1;
+            transition: color 0.3s;
+        }
+        .bottom-nav a:hover {
+            color: #fff700;
+        }
+        .bottom-nav i {
+            display: block;
+            font-size: 1.5em;
+            margin-bottom: 5px;
+        }
+        .modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            visibility: hidden;
+            opacity: 0;
+            transition: visibility 0.3s, opacity 0.3s;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+        .modal.active {
+            visibility: visible;
+            opacity: 1;
+        }
+        .modal-content {
+            background: #333333;
+            padding: 20px;
+            border-radius: 10px;
+            width: 90%;
+            max-width: 400px;
+            text-align: center;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3);
+            border: 2px solid #ffd700;
+            color: #ffd700;
+            box-sizing: border-box;
+        }
+        .modal-content h3 {
+            margin-bottom: 20px;
+            color: #ffd700;
+        }
+        .modal-content input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+            background-color: #222;
+            color: #ffd700;
+            box-sizing: border-box;
+        }
+        .modal-content button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            color: #1a1a1a;
+            background-color: #ffd700;
+            border: none;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+        .modal-content button:hover {
+            background-color: #e5c100;
         }
     </style>
-<link rel="me" href="https://www.blogger.com/profile/12615525391666988711" />
-<meta name='google-adsense-platform-account' content='ca-host-pub-1556223355139109'/>
-<meta name='google-adsense-platform-domain' content='blogspot.com'/>
-<link rel="me" href="https://www.blogger.com/profile/18369340732868072285" />
-<meta name='google-adsense-platform-account' content='ca-host-pub-1556223355139109'/>
-<meta name='google-adsense-platform-domain' content='blogspot.com'/>
 </head>
 <body>
-    <div class="container">
-        <h1>Auto MoneTag Ads</h1>
-        <div class="developer" onclick="window.location.href='https://t.me/TECHNICAL_TOM'">Developer by Md Najmul Hoque</div>
-        
-        <!-- Display User Info -->
+    <div class="user-card">
         <div class="user-info">
-            <p>Welcome, <span id="user-name">Loading...</span></p>
+            
+            <div class="user-details">
+                <h2 id="userName">Your Name</h2>
+                <p>Number -  <span id="userNumber">000000</span></p>
+            </div>
         </div>
- 
-        <div class="stats">
-            <p>Watched Ads: <span id="watched-ads">0</span></p>
-            <p>Earned Points: <span id="earned-points">0</span></p>
-        </div>
-        <div class="progress-circle">
-            <span id="ads-progress">0%</span>
-        </div>
-        <div class="buttons">
-            <button id="watch-ad-btn" onclick="watchAd()">Watch Ad</button>
-            <button id="auto-ad-btn" onclick="startAutoAds()">Auto Show Ads</button>
-            <button id="stop-auto-btn" onclick="stopAutoAds()">Stop Auto Ads</button>
-            <button id="withdraw-btn" onclick="showWithdrawForm()">Withdraw</button>
-        </div>
- 
-        <!-- Withdraw Section -->
-        <div class="withdraw-section" id="withdraw-section">
-            <h3 style="color: orange; margin-bottom: 15px;">Withdrawal Request</h3>
-            <input type="number" id="withdraw-amount" placeholder="Enter Points to Withdraw" />
-            <select id="payment-method">
-                <option value="bkash">Bkash</option>
-                <option value="nagad">Nagad</option>
-                <option value="manual">Manual</option>
-            </select>
-            <input type="text" id="withdraw-phone" placeholder="Enter Phone Number" />
-            <button onclick="withdrawPoints()">Withdraw</button>
-            <p id="withdraw-status"></p>
+        <div class="balance-info">
+            <p>Points: <span id="userPoints">0</span></p>
+            <p>Balance: $<span id="userBalance">0.00</span></p>
         </div>
     </div>
- 
-    <script src='//jagnaimsee.net/vignette.min.js' data-zone='8806288' data-sdk='show_8806288'></script>
- 
-    <script>
-        const MIN_WITHDRAW_POINTS = 5;
-        const ADMIN_USER_ID = 1647354354;
-        const BOT_TOKEN = "6290805775:AAFLAUpr4pCYDsDpC8CBRUuBUjIEAvEn1o0";
-        let watchedAdsCount = 0;
-        let earnedPoints = 0.00;
-        let autoAdInterval;
- 
-        // Simulate user name from Telegram User // Telegram Mini App থেকে ইউজারের তথ্য আনছে
-if (window.Telegram && Telegram.WebApp) {
-    Telegram.WebApp.ready(); // Mini App রেডি করা
-    const user = Telegram.WebApp.initDataUnsafe.user;
 
-    if (user && user.username) {
-        document.getElementById("user-name").textContent = "@" + user.username;
-    } else {
-        document.getElementById("user-name").textContent = "Guest";
-    }
-}
- 
-        // Check if user data is saved in localStorage
-        if (localStorage.getItem('watchedAdsCount')) {
-            watchedAdsCount = parseInt(localStorage.getItem('watchedAdsCount'));
-            earnedPoints = parseFloat(localStorage.getItem('earnedPoints'));
-            document.getElementById('watched-ads').textContent = watchedAdsCount;
-            document.getElementById('earned-points').textContent = earnedPoints.toFixed(2);
+    <div class="ad-container">
+        <h1>Complete Reward Task</h1>
+        <button class="reward-button" onclick="showRewardedAd()">Reward Task</button>
+    </div>
+
+    <!-- Bottom Navigation Bar -->
+    <div class="bottom-nav">
+        <a href="#"><i class="fas fa-home"></i>Home</a>
+        <a href="https://t.me/MR_404_WORLD"><i class="fas fa-share-alt"></i>Share</a>
+        <a href="https://t.me/TECHNICAL_TOM" target="_blank"><i class="fas fa-user-tie"></i>Developer</a>
+    </div>
+
+    <div class="modal" id="userModal">
+        <div class="modal-content">
+            <h3>What's your name and number?</h3>
+            <input type="text" id="inputName" placeholder="Enter your name">
+            <input type="text" id="inputNumber" placeholder="Enter your number">
+            <button onclick="saveUserInfo()">Save</button>
+        </div>
+    </div>
+
+    <script>
+        let points = 0;
+        let balance = 0;
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const savedName = localStorage.getItem('userName');
+            const savedNumber = localStorage.getItem('userNumber');
+            const userModal = document.getElementById('userModal');
+            
+            if (savedName && savedNumber) {
+                document.getElementById('userName').textContent = savedName;
+                document.getElementById('userNumber').textContent = savedNumber;
+            } else {
+                userModal.classList.add('active');
+            }
+
+            // Display saved points and balance
+            points = parseInt(localStorage.getItem('userPoints') || '0');
+            balance = parseFloat(localStorage.getItem('userBalance') || '0.00');
+            updateBalance();
+        });
+
+        function saveUserInfo() {
+            const name = document.getElementById('inputName').value;
+            const number = document.getElementById('inputNumber').value;
+
+            if (name && number) {
+                localStorage.setItem('userName', name);
+                localStorage.setItem('userNumber', number);
+                document.getElementById('userName').textContent = name;
+                document.getElementById('userNumber').textContent = number;
+                document.getElementById('userModal').classList.remove('active');
+            } else {
+                alert("Please enter both your name and number.");
+            }
         }
- 
-        // Function to watch an ad and update stats
-        function watchAd() {
+
+
+        // Reward ad function
+        function showRewardedAd() {
             if (typeof show_8806288 === 'function') {
                 show_8806288().then(() => {
-                    // When the ad is shown, we add points
-                    watchedAdsCount++;
-                    document.getElementById('watched-ads').textContent = watchedAdsCount;
-                    earnedPoints += 0.50; // Add 0.50 points per ad watched
-                    document.getElementById('earned-points').textContent = earnedPoints.toFixed(2);
-                    localStorage.setItem('watchedAdsCount', watchedAdsCount);
-                    localStorage.setItem('earnedPoints', earnedPoints.toFixed(2));
- 
-                    // Update progress circle
-                    updateProgressCircle();
+                    // Increase points and balance on ad completion
+                    points += 10;  
+                    balance += 0.01;
+                    localStorage.setItem('userPoints', points);
+                    localStorage.setItem('userBalance', balance.toFixed(2));
+                    document.getElementById('userPoints').textContent = points;
+                    document.getElementById('userBalance').textContent = balance.toFixed(2);
+
+                    alert('You have completed the Reward Task and earned 10 points!');
+                }).catch(error => {
+                    alert('Failed to show rewarded ad.');
+                    console.error('Ad error:', error);
                 });
+            } else {
+                alert('Rewarded ad not available.');
             }
         }
- 
-        // Update progress circle based on watched ads
-        function updateProgressCircle() {
-            const percentage = (watchedAdsCount / 10) * 100;
-            document.getElementById('ads-progress').textContent = `${percentage}%`;
+        
+        
+        
+        
+        function updateBalance() {
+            document.getElementById('userPoints').textContent = points;
+            document.getElementById('userBalance').textContent = balance.toFixed(2);
+
+            localStorage.setItem('userPoints', points);
+            localStorage.setItem('userBalance', balance.toFixed(2));
         }
- 
-        // Function to start auto showing ads
-        function startAutoAds() {
-            autoAdInterval = setInterval(watchAd, 5000); // Auto show ad every 5 seconds
-            document.getElementById('auto-ad-btn').disabled = true;
-            document.getElementById('stop-auto-btn').disabled = false;
+        
+        
+        
+document.addEventListener("contextmenu", function(e) {
+        e.preventDefault();
+        alert("Right-click isn't allowed!");
+    });
+    
+
+
+    document.addEventListener("keydown", function(e) {
+        // F12 ব্লক করা
+        if (e.key === "F12") {
+            e.preventDefault();
+            alert("Developer Tools isn't allowed!");
         }
- 
-        // Function to stop auto ads
-        function stopAutoAds() {
-            clearInterval(autoAdInterval);
-            document.getElementById('auto-ad-btn').disabled = false;
-            document.getElementById('stop-auto-btn').disabled = true;
+
+        // Ctrl + Shift + I ব্লক করা (Chrome/Edge Inspector shortcut)
+        if (e.ctrlKey && e.shiftKey && e.key === "I") {
+            e.preventDefault();
+            alert("Developer Tools isn't allowed!");
         }
- 
-        // Function to show withdraw form
-        function showWithdrawForm() {
-            document.getElementById('withdraw-section').style.display = 'block';
+
+        // Ctrl + Shift + J ব্লক করা (Chrome/Edge Console shortcut)
+        if (e.ctrlKey && e.shiftKey && e.key === "J") {
+            e.preventDefault();
+            alert("Developer Tools isn't allowed!");
         }
- 
-        // Function to handle withdrawal
-        function withdrawPoints() {
-            const amount = document.getElementById('withdraw-amount').value;
-            const paymentMethod = document.getElementById('payment-method').value;
-            const phoneNumber = document.getElementById('withdraw-phone').value;
- 
-            if (amount < MIN_WITHDRAW_POINTS) {
-                document.getElementById('withdraw-status').textContent = `Minimum withdrawal amount is ${MIN_WITHDRAW_POINTS} points.`;
-                return;
-            }
- 
-            if (amount > earnedPoints) {
-                document.getElementById('withdraw-status').textContent = `Insufficient balance. You have ${earnedPoints.toFixed(2)} points.`;
-                return;
-            }
- 
-            // Subtract points from earnedPoints after successful withdrawal
-            earnedPoints -= parseFloat(amount);
-            document.getElementById('earned-points').textContent = earnedPoints.toFixed(2);
- 
-            // Save the updated balance in localStorage
-            localStorage.setItem('earnedPoints', earnedPoints.toFixed(2));
- 
-            // Send withdrawal request to admin via Telegram
-            const message = `Withdrawal Request from ${telegramUserName}:\nAmount: ${amount} points\nPayment Method: ${paymentMethod}\nPhone Number: ${phoneNumber}`;
-            sendWithdrawRequestToAdmin(message);
- 
-            // Show success message
-            document.getElementById('withdraw-status').textContent = 'Withdrawal request sent successfully!';
- 
-            // Clear form
-            document.getElementById('withdraw-amount').value = '';
-            document.getElementById('withdraw-phone').value = '';
+
+        // Ctrl + Shift + C ব্লক করা (Chrome/Edge/Firefox Inspector shortcut)
+        if (e.ctrlKey && e.shiftKey && e.key === "C") {
+            e.preventDefault();
+            alert("Developer Tools isn't allowed!");
         }
- 
-        // Function to send withdrawal request to admin
-        function sendWithdrawRequestToAdmin(message) {
-            fetch(`https://api.telegram.org/bot${BOT_TOKEN}/sendMessage?chat_id=${ADMIN_USER_ID}&text=${encodeURIComponent(message)}`)
-                .then(response => response.json())
-                .then(data => {
-                    if (data.ok) {
-                        console.log('Message sent to admin');
-                    }
-                })
-                .catch(error => console.error('Error sending message:', error));
+
+        // Ctrl + U ব্লক করা (View Page Source shortcut)
+        if (e.ctrlKey && e.key === "U") {
+            e.preventDefault();
+            alert("Viewing page source isn't allowed!");
         }
+
+        // Ctrl + Shift + K ব্লক করা (Firefox Console shortcut)
+        if (e.ctrlKey && e.shiftKey && e.key === "K") {
+            e.preventDefault();
+            alert("Developer Tools isn't allowed!");
+        }
+    });
+
+    
     </script>
 </body>
 </html>
- 
