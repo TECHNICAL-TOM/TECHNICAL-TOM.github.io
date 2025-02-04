@@ -54,7 +54,7 @@
             </div>
         </div>
         <div class="balance-info">
-            <p>Points: <span id="userPoints">0</span></p>
+            <p>Life Time Earning: $<span id="userPoints">0.00</span></p>
             <p>Balance: $<span id="userBalance">0.00</span></p>
         </div>
     </div>
@@ -136,12 +136,12 @@
     function showRewardedAd() {
         if (typeof show_8806288 === 'function') {
             show_8806288().then(() => {
-                points += 10;
-                balance += 50.01;
+                points += 0.05;
+                balance += 0.05;
                 localStorage.setItem('userPoints', points);
                 localStorage.setItem('userBalance', balance.toFixed(2));
                 updateBalance();
-                alert('You have completed the Reward Task and earned 10 points!');
+                alert('You have completed the Reward Task and earning 0.05$ ');
             }).catch(error => {
                 alert('Failed to show rewarded ad.');
                 console.error('Ad error:', error);
